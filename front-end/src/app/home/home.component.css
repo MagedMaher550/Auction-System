@@ -1,0 +1,34 @@
+.flex-center{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.dsc{
+    color: rgb(130, 130, 130);
+    font-weight: 400;
+    font-size: 1.2em;
+    text-align: center;
+  
+}
+.welcome-container {
+    background-image:  url('https://artbusinessnews.com/wpdev/wp-content/uploads/2015/10/Jussi-Pylkkanen-Auction-Shot-_-New-York-May.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    height: 40vh;
+   
+}
+.card{
+    border-radius: 0px;
+    border: none;
+}
+.show-more-btn{
+    background-color: #1F2230 ;
+    color: white !important;
+    font-weight: 400;
+    border-radius: 5px;
+    padding: 10px 50px;
+    
+}
+  

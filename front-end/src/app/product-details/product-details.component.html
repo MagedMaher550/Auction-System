@@ -1,0 +1,133 @@
+<div class="container">
+  <div class="d-flex justify-content-start">
+    <div class="row">
+      <div class="menu-image col-md-4 col-sm-6 col-12">
+        <img
+          src="{{ productDetails.imgUrl }}"
+          class="img-fluid"
+          alt="menu image"
+        />
+      </div>
+      <div class="menu-text col-md-8 col-sm-6 col-12">
+        <div class="header">
+          {{ productDetails.title }}
+        </div>
+        <div class="description">
+          {{ productDetails.description }}
+        </div>
+        <div class="secondary-header">
+          Bidding Price: ${{ produtHighestPrice }}
+        </div>
+        <div>
+          <p class="bid-now">Bid Now</p>
+          <p class="bid-amount">
+            Bid Amount: Minimum Bid ${{ productDetails.initialPrice }}
+          </p>
+        </div>
+        <div class="price-button">
+          <div class="price">
+            <div *ngIf="hasBiddingStarted">
+              <div *ngIf="isBiddingAvailable">
+                <form
+                  [formGroup]="addBidding"
+                  class="form-left-padding"
+                  (ngSubmit)="addBiddingValue($event)"
+                  *ngIf="!isUserOwnProduct"
+                >
+                  <input
+                    class=""
+                    type="number"
+                    min="{{ produtHighestPrice + 1 }}"
+                    placeholder="Add Bidding"
+                    aria-label="Bidding Form"
+                    formControlName="biddingValue"
+                  />
+                  <br />
+                  <br />
+                  <button type="submit" class="btn custom-bidding-btn">
+                    ADD BIDDING
+                  </button>
+                </form>
+              </div>
+            </div>
+            <div *ngIf="!isBiddingAvailable">
+              <br />
+              <p class="text-danger">Sorry, Bidding Has Ended</p>
+            </div>
+            <div *ngIf="!hasBiddingStarted">
+              <br />
+              <p class="text-primary text-center">Sorry, Bidding Hasn't Started yet!</p>
+              <p class="text-secondary text-center">Stay Tuned.</p>
+            </div>
+            <div *ngIf="isUserOwnProduct">
+              <button class="btn btn-primary" (click)="navigateToEdit($event)">
+                Edit
+              </button>
+              <button class="btn btn-danger" (click)="deleteProduct($event)">
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divsContainer">
+  <button
+    (click)="toggleDiv(1)"
+    [ngClass]="{ activeBtn: div1Visible }"
+    class="toggleBtn"
+  >
+    Description
+  </button>
+  <button
+    (click)="toggleDiv(2)"
+    [ngClass]="{ activeBtn: div2Visible }"
+    class="toggleBtn"
+  >
+    Bidding History
+  </button>
+  <button
+    (click)="toggleDiv(3)"
+    [ngClass]="{ activeBtn: div3Visible }"
+    class="toggleBtn"
+  >
+    Other Auctions
+  </button>
+
+  <div class="descriptionDiv" *ngIf="div1Visible">
+    <h3>Product Description</h3>
+    <p>
+      {{ productDetails.description }}
+    </p>
+  </div>
+  <div class="toggle-div" *ngIf="div2Visible">
+    <div class="scrollable-container">
+      <app-binding-history-item
+        *ngFor="let item of BiddingHistoryForDisplay"
+        [imageUrl]="item.imageUrl"
+        [name]="item.name"
+        [price]="item.price + ''"
+      ></app-binding-history-item>
+    </div>
+  </div>
+  <div class="toggle-div" *ngIf="div3Visible">
+    <div class="row otherAuctions">
+      <div
+        class="col-md-4 col-sm-6 col-xs-12"
+        *ngFor="let product of threeActiveProducts"
+      >
+        <app-card
+          [Id]="product.id.toString()"
+          [Image]="product.imgUrl"
+          [Title]="product.title"
+          [Price]="product.initialPrice"
+          [StartDate]="product.startDate"
+          [EndDate]="product.endDate"
+        ></app-card>
+      </div>
+    </div>
+  </div>
+</div>

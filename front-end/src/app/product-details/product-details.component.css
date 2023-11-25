@@ -1,0 +1,170 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  /* outline: 1px solid #f00 !important;
+  opacity: 1 !important;
+  visibility: visible !important; */
+}
+
+.container {
+  margin-top: 2.5rem;
+}
+
+.button {
+  cursor: pointer;
+}
+
+.image img,
+.large-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.description {
+  margin-bottom: 10px;
+}
+
+.secondary-header {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.bid-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.bid-now {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .image {
+    align-self: center;
+  }
+  .large-image {
+    align-self: center;
+  }
+}
+
+.divsContainer {
+  width: 90%;
+  margin: 5rem 5%;
+}
+
+.toggleBtn:not(:last-of-type) {
+  margin-right: 3rem;
+}
+
+.toggleBtn {
+  padding: 1.1rem 1.5rem;
+  border: none;
+  border-radius: 0.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  background-color: #edfff1;
+}
+
+.toggleBtn:hover {
+  background-color: #1f2230;
+  color: #fff;
+}
+
+.activeBtn {
+  background-color: #1f2230;
+  color: #fff;
+}
+
+.descriptionDiv h3,
+.descriptionDiv p {
+  font-weight: 600;
+}
+
+.descriptionDiv h3 {
+  margin: 1.5rem 0rem;
+}
+
+.descriptionDiv p {
+  color: #9f9e9e;
+}
+
+.descriptionDiv ul {
+  list-style-type: none;
+}
+
+.descriptionDiv ul li {
+  color: #888787;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.descriptionDiv li::before {
+  content: "\2713";
+  color: #ccc;
+  margin-right: 5px;
+}
+
+.scrollable-container {
+  max-height: 350px; /* Set a maximum height for vertical scrolling */
+  overflow-y: scroll; /* Enable vertical scrolling when content overflows */
+  background-color: #fff;
+}
+
+/* For WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 8px; /* Set the width to make it thinner */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* Change the color of the thumb (the draggable part) */
+  border-radius: 4px; /* Add some border-radius for a rounded look */
+}
+
+/* For Firefox */
+.scrollable-container {
+  scrollbar-width: thin; /* Make the scrollbar thinner */
+}
+
+.scrollable-container::-webkit-scrollbar-thumb {
+  background: #888; /* Change the color of the thumb (the draggable part) */
+  border-radius: 4px; /* Add some border-radius for a rounded look */
+}
+
+.custom-bidding-btn {
+  background-color: #1F2230 ;
+  color: #fff;
+  font-weight: 400;
+  border-radius: 5px;
+  padding: 10px 50px;
+  transition: 0.2s ease-in-out;
+}
+
+.custom-bidding-btn:hover {
+  background-color: #50556e;
+}
+
+.otherAuctions {
+  margin-top: 2.5rem
+}

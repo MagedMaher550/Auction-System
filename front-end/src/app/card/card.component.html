@@ -1,0 +1,17 @@
+<div class="card myAccountProduct">
+  <img class="card-img-top" [src]="Image" />
+  <h5 class="flex-center timer-color">{{ timeLeft }}</h5>
+  <div class="card-body">
+    <h5 class="card-title">{{ Title }}</h5>
+    <p class="card-text">
+      <span class="grey-color">Initial Price : </span><b>${{ Price }}</b>
+    </p>
+    <br />
+    <a
+      *ngIf="hideBiddingBtn"
+      [routerLink]="'/products/' + Id"
+      class="place-a-bid"
+      >Place A Bid</a
+    >
+  </div>
+</div>

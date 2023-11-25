@@ -1,0 +1,121 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@media (min-width: 1200px) {
+  .auth-signup {
+    width: 35%;
+    margin: 7.5rem 32.5%;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1200px) {
+  .auth-signup {
+    width: 45%;
+    margin: 7.5rem 27.5%;
+  }
+}
+
+@media (min-width: 762px) and (max-width: 900px) {
+  .auth-signup {
+    width: 55%;
+    margin: 7.5rem 22.5%;
+  }
+}
+
+@media (min-width: 572px) and (max-width: 762px) {
+  .auth-signup {
+    width: 65%;
+    margin: 7.5rem 17.5%;
+  }
+}
+
+@media (max-width: 572px) {
+  .auth-signup {
+    width: 90%;
+    margin: 7.5rem 5%;
+  }
+}
+
+.auth-signup {
+  margin-top: 7.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-signup .mainHeader {
+  color: #13092b;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  align-self: center;
+}
+
+.auth-signup .secondaryHeader {
+  font-size: 1.1rem;
+  align-self: center;
+}
+
+.auth-signup .secondaryHeader a {
+  text-decoration: none;
+  color: #1c103a;
+  font-weight: 700;
+}
+
+form {
+  margin-top: 2.5rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center; /* Vertically center checkbox and label */
+}
+
+/* Add some spacing */
+.checkbox-label input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.forgotPassword a {
+  color: black;
+  font-size: 1rem;
+}
+
+form button {
+  margin: 1.5rem 0rem;
+  width: 100%;
+  padding: 1rem 0rem;
+  background-color: #1f2230;
+  border: none;
+  border-radius: 0.3rem;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+}
+
+form button:hover {
+  background-color: #414454;
+  font-size: 0.9rem;
+}
+
+/* FORM  */
+
+.form-group-inline {
+  display: inline-block;
+  width: 50%;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+}
+
+.form-group input {
+  margin-top: 1rem;
+  padding: 0.7rem;
+  width: 95%;
+  border: 0.01rem solid rgb(221, 220, 220);
+  transition: 0.3s ease-in-out;
+}

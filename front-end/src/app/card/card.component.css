@@ -1,0 +1,43 @@
+.grey-color {
+  color: grey;
+}
+.place-a-bid {
+  background-color: #1f2230;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+.card-img-top {
+  height: 200px; /* Adjust the height as needed */
+  object-fit: contain;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+.timer-color {
+  background-color: #1f2230;
+  color: white;
+  margin: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 1rem;
+}
+
+.card-title {
+  overflow: hidden; /* Hide the overflow content */
+  text-overflow: ellipsis; /* Display an ellipsis for overflow text */
+  white-space: nowrap;
+}
+
+.myAccountProduct {
+  cursor: pointer;
+}
+
+.myAccountProduct {
+  transition: 0.2s ease-in-out;
+}
+
+.myAccountProduct:hover {
+  transform: scale(1.09);
+}

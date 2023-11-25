@@ -1,0 +1,69 @@
+<div class="auth-signup">
+  <h1>Update Product</h1>
+  <form [formGroup]="editProduct" (ngSubmit)="updateProduct($event)">
+    <div class="form-group form-group-inline">
+      <label for="product_name"> Product Name </label>
+      <input
+        type="text"
+        name="product_name"
+        id="product_name"
+        placeholder="Product Name"
+        value=""
+        formControlName="productName"
+      />
+    </div>
+    <div class="form-group form-group-inline">
+      <label for="image_url"> Image URL </label>
+      <input
+        type="text"
+        name="image_url"
+        id="image_url"
+        placeholder="Image URL"
+        formControlName="imageUrl"
+      />
+    </div>
+    <div class="form-group form-group-inline">
+      <label for="initial_price"> Initial Price </label>
+      <input
+        type="number"
+        name="initial_price"
+        id="initial_price"
+        placeholder="Initial Price"
+        formControlName="initialPrice"
+      />
+    </div>
+    <div class="form-group form-group-inline">
+      <label for="start_date"> Start Date </label>
+      <input
+        type="date"
+        name="start_date"
+        id="start_date"
+        placeholder="Start Date"
+        formControlName="startDate"
+        [required]="true"
+      />
+    </div>
+    <div class="form-group form-group-inline">
+      <label for="end_date"> End Date </label>
+      <input
+        type="date"
+        name="end_date"
+        id="end_date"
+        placeholder="End Date"
+        formControlName="endDate"
+        [required]="true"
+      />
+    </div>
+    <div class="form-group form-group-inline">
+      <label for="description"> Description </label>
+      <input
+        type="description"
+        name="description"
+        id="description"
+        placeholder="Description"
+        formControlName="description"
+      />
+    </div>
+    <button class="btn btn-primary" type="submit">UPDATE PRODUCT</button>
+  </form>
+</div>

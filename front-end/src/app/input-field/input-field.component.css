@@ -1,0 +1,17 @@
+.form-group-inline {
+  display: inline-block;
+  width: 50%;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+}
+
+.form-group input {
+  margin-top: 1rem;
+  padding: 0.7rem;
+  width: 95%;
+  border: 0.01rem solid rgb(221, 220, 220);
+  transition: 0.3s ease-in-out;
+}

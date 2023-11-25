@@ -1,0 +1,170 @@
+<div class="container">
+  <div class="buttonsContainer">
+    <button (click)="toggleDiv(1)" [class.activeBtn]="div1Visible">
+      My Profile
+    </button>
+    <button (click)="toggleDiv(2)" [class.activeBtn]="div2Visible">
+      Order Bidding
+    </button>
+    <button (click)="toggleDiv(3)" [class.activeBtn]="div3Visible">
+      Add Product
+    </button>
+    <button (click)="toggleDiv(4)" [class.activeBtn]="div4Visible">
+      My Products
+    </button>
+    <button (click)="logout($event)" [class.activeBtn]="div5Visible">
+      Logout
+    </button>
+  </div>
+  <div class="divsContainer">
+    <div *ngIf="div1Visible" class="profileDiv">
+      <div class="imgTitle">
+        <div class="userImg">
+          <img
+            src="https://st3.depositphotos.com/9998432/13335/v/450/depositphotos_133351928-stock-illustration-default-placeholder-man-and-woman.jpg"
+            alt="avatar img"
+          />
+        </div>
+        <div class="nameTitle">
+          <p class="title">{{ retrievedUserData.fullname }}</p>
+          <p class="name">{{ retrievedUserData.email }}</p>
+        </div>
+      </div>
+      <div class="updatedUserData">
+        <form [formGroup]="updateUser" (ngSubmit)="updateProfile($event)">
+          <div class="form-group">
+            <label for="updatedFullName">Fullname * </label>
+            <input
+              type="text"
+              name="updatedFullName"
+              id="updatedFullName"
+              placeholder="Fullname"
+              formControlName="updatedFullname"
+            />
+          </div>
+          <br />
+          <div class="form-group">
+            <label for="updatedEmail">Email * </label>
+            <input
+              type="email"
+              name="updatedEmail"
+              id="updatedEmail"
+              placeholder="Emial"
+              formControlName="updatedEmail"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Update</button>
+          <button type="submit" class="btn btn-light">Cancel</button>
+        </form>
+      </div>
+    </div>
+    <div *ngIf="div2Visible">
+      <table class="table table-striped table-hover">
+        <tr>
+          <th>Image</th>
+          <th>Bidding ID</th>
+          <th>Price</th>
+          <th>Status</th>
+        </tr>
+        <tr *ngFor="let orderBdding of orderBiddings">
+          <td><img [src]="orderBdding.img" [alt]="orderBdding.biddingId" /></td>
+          <td>{{ orderBdding.biddingId }}</td>
+          <td>${{ orderBdding.price }}</td>
+          <td
+            [class.orderPending]="orderBdding.status == 'Pending'"
+            [class.orderApproved]="orderBdding.status == 'Approved'"
+            [class.orderRejected]="orderBdding.status == 'Rejected'"
+          >
+            {{ orderBdding.status }}
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div *ngIf="div3Visible">
+      <!-- <form> -->
+      <form [formGroup]="addProduct" (ngSubmit)="addProductValue($event)">
+        <div class="form-group form-group-inline">
+          <label for="product_name">Enter Product Name </label>
+          <input
+            type="text"
+            name="product_name"
+            id="product_name"
+            placeholder="Product Name"
+            formControlName="productName"
+          />
+        </div>
+        <div class="form-group form-group-inline">
+          <label for="image_url">Enter Image URL </label>
+          <input
+            type="text"
+            name="image_url"
+            id="image_url"
+            placeholder="Image URL"
+            formControlName="imageUrl"
+          />
+        </div>
+        <div class="form-group form-group-inline">
+          <label for="initial_price">Enter Initial Price </label>
+          <input
+            type="number"
+            name="initial_price"
+            id="initial_price"
+            placeholder="Initial Price"
+            formControlName="initialPrice"
+          />
+        </div>
+        <div class="form-group form-group-inline">
+          <label for="start_date">Enter Start Date </label>
+          <input
+            type="date"
+            name="start_date"
+            id="start_date"
+            placeholder="Start Date"
+            formControlName="startDate"
+          />
+        </div>
+        <div class="form-group form-group-inline">
+          <label for="end_date">Enter End Date </label>
+          <input
+            type="date"
+            name="end_date"
+            id="end_date"
+            placeholder="End Date"
+            formControlName="endDate"
+          />
+        </div>
+        <div class="form-group form-group-inline">
+          <label for="description">Enter Description </label>
+          <input
+            type="description"
+            name="description"
+            id="description"
+            placeholder="Description"
+            formControlName="description"
+          />
+        </div>
+        <button class="btn btn-primary" type="submit">ADD PRODUCT</button>
+      </form>
+    </div>
+    <div *ngIf="div4Visible">
+      <div class="row">
+        <div
+          class="col-md-4 col-sm-6 col-xs-12"
+          *ngFor="let product of userPorducts"
+        >
+          <div class="myAccountProduct" (click)="navigateToProductDetails(product.id)">
+            <app-card
+              [Id]="product.id.toString()"
+              [Image]="product.imgUrl"
+              [Title]="product.title"
+              [Price]="product.initialPrice"
+              [StartDate]="product.startDate"
+              [EndDate]="product.endDate"
+              [hideBiddingBtn]="false"
+            ></app-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

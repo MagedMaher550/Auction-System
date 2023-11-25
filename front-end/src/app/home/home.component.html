@@ -1,0 +1,105 @@
+<div class="welcome-container"></div>
+
+<div class="container mt-5">
+  <div class="flex-center"><h2>Live Auction</h2></div>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 flex-center">
+      <div class="dsc">
+        Explore on the world's best & largest Bidding marketplace with our
+        beautiful Bidding products. We want to be a part of your smile, success
+        growth.
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+  <div class="row">
+    <div
+      class="col-md-3 col-sm-6 col-6 mt-4 mb-4"
+      *ngFor="let product of fetchedEightActiveProducts"
+    >
+      <div
+        class="myAccountProduct"
+        (click)="navigateToProductDetails(product.id)"
+      >
+        <app-card
+          [Id]="product.id.toString()"
+          [Image]="product.imgUrl"
+          [Title]="product.title"
+          [Price]="product.initialPrice"
+          [StartDate]="product.startDate"
+          [EndDate]="product.endDate"
+        ></app-card>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="flex-center my-1">
+  <a class="show-more-btn" routerLink="/products">View All</a>
+</div>
+<div class="container">
+  <div class="card my-5">
+    <div class="row g-0">
+      <div class="col-md-6">
+        <img
+          src="https://d7hftxdivxxvm.cloudfront.net/?quality=80&resize_to=width&src=https%3A%2F%2Fartsy-media-uploads.s3.amazonaws.com%2FxzqPJtDRTUr4dtt2Tpra1A%252Fd7hftxdivxxvm.cloudfront-34.jpg&width=910"
+          class="img-fluid rounded-start"
+          style="width: 100%"
+        />
+      </div>
+      <div class="col-md-6">
+        <div class="card-body">
+          <h3 class="card-title">About Us</h3>
+          <p class="card-text">
+            A Wide Selection: We offer a diverse selection of products, ensuring
+            there's something for everyone. Secure Transactions: Your privacy
+            and security are our top priorities. We use advanced encryption and
+            secure payment methods. Customer Support: Our dedicated support team
+            is here to assist you with any questions or concerns. Auction
+            Experience: Join our live auctions for a thrilling bidding
+            experience.
+          </p>
+          <p class="card-text">
+            <small class="text-muted">Published :1 june 2021</small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="flex-center mt-5"><h2>Up Comming Auction</h2></div>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 flex-center">
+      <div class="dsc">
+        Explore on the world's best & largest Bidding marketplace with our
+        beautiful Bidding products. We want to be a part of your smile, success
+        growth.
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+  <div class="row">
+    <div
+      class="col-md-3 col-sm-6 col-6 mt-4 mb-4"
+      *ngFor="let product of fetchedUpcomingProducts"
+    >
+      <div
+        class="myAccountProduct"
+        (click)="navigateToProductDetails(product.id)"
+      >
+        <app-card
+          [Id]="product.id.toString()"
+          [Image]="product.imgUrl"
+          [Title]="product.title"
+          [Price]="product.initialPrice"
+          [StartDate]="product.startDate"
+          [EndDate]="product.endDate"
+          [isUpcoming]="true"
+        ></app-card>
+      </div>
+    </div>
+  </div>
+</div>

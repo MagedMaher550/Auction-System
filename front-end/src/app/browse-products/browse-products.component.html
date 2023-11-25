@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="flex-end mt-1 mb-5">
+    <div class="dropdown">
+      <b>Sort by </b> |
+      <button
+        class="sort dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Best Matches
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <div class="dropdown-item" (click)="sortPriceAsc($event)">
+          Price : $-$$
+        </div>
+        <div class="dropdown-item" (click)="sortPriceDesc($event)">
+          Price : $$-$
+        </div>
+        <div class="dropdown-item" (click)="sortNameAsc($event)">
+          Name : A-Z
+        </div>
+        <div class="dropdown-item" (click)="sortNameDesc($event)">
+          Name : Z-A
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div
+      class="col-md-3 col-sm-6 col-6 mt-4 mb-4"
+      *ngFor="let product of productsData"
+    >
+      <div
+        class="myAccountProduct"
+        (click)="navigateToProductDetails(product.id)"
+      >
+        <app-card
+          [Id]="product.id.toString()"
+          [Image]="product.imgUrl"
+          [Title]="product.title"
+          [Price]="product.initialPrice"
+          [StartDate]="product.startDate"
+          [EndDate]="product.endDate"
+        ></app-card>
+      </div>
+    </div>
+  </div>
+</div>

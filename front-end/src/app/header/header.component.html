@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-lg background-color-white">
+  <h1 class="logo">Auction</h1>
+
+  <button
+    class="navbar-toggler no-border"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+      >
+        <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z" />
+      </svg>
+    </span>
+  </button>
+
+  <div
+    class="collapse navbar-collapse left-padding-50"
+    id="navbarSupportedContent"
+  >
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <div class="nav-link" (click)="browseProducts($event)">Browse Products</div>
+        <!-- <a class="nav-link" routerLink="/products">Browse Products</a> -->
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/about-us">About Us</a>
+      </li>
+
+      <li>
+        <form [formGroup]="search" class="form-inline form-left-padding" (ngSubmit)="getSearchResults($event)">
+          <div class="display-flex-space-between">
+            <div>
+              <input
+                class="search-input"
+                type="search"
+                placeholder="Search Product, Category, Brand"
+                aria-label="Search"
+                formControlName="searchQuery"
+              />
+            </div>
+            <div>
+              <button class="search-btn" type="submit">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </li>
+    </ul>
+    <div *ngIf="!isLoggedIn">
+      <a class="nav-link" routerLink="/auth/login">Login</a>
+    </div>
+    <div *ngIf="isLoggedIn">
+      <a class="nav-link" routerLink="/auth/myaccount">My Account</a>
+    </div>
+  </div>
+</nav>

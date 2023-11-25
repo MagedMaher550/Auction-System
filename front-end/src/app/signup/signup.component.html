@@ -1,0 +1,45 @@
+<div class="auth-signup">
+  <div class="mainHeader">Sign Up</div>
+  <div class="secondaryHeader">
+    Already have account?
+    <a routerLink="/auth/login"> Login Here </a>
+  </div>
+  <form [formGroup]="registerForm" (ngSubmit)="register($event)">
+    <div class="form-group">
+      <label for="fullname">Fullname </label>
+      <input
+        type="text"
+        name="fullname"
+        id="fullname"
+        placeholder="Enter Your Fullname"
+        formControlName="fullname"
+      />
+    </div>
+    <div class="form-group">
+      <label for="fullname">Email </label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="Enter Your Email"
+        formControlName="email"
+      />
+    </div>
+    <div class="form-group">
+      <label for="password">Password </label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Enter Your Password"
+        formControlName="password"
+      />
+    </div>
+    <div class="checkbox-label">
+      <input type="checkbox" name="termsAndPolicy" id="termsAndPolicy" formControlName="termsCheckbox" />
+      <label for="termsAndPolicy">I agree to terms and policy</label>
+    </div>
+    <!-- <button class="btn btn-primary" type="submit">ADD PRODUCT</button> -->
+    <button type="submit" [disabled]="isTermsChecked">CREATE ACCOUNT</button>
+  </form>
+</div>

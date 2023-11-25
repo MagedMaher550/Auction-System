@@ -1,0 +1,31 @@
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0; /* Adjust margin as needed */
+}
+
+.leftDiv {
+  display: flex;
+  align-items: center;
+}
+
+.leftDiv-content {
+  display: flex;
+  align-items: center;
+}
+
+.small-image {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  margin-right: 1rem; /* Small space between image and text */
+}
+
+.rightDiv {
+  display: flex;
+  align-items: center;
+}
+
+.price {
+  font-weight: 700;
+}
